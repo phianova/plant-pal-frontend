@@ -32,7 +32,11 @@ export default function Home() {
   return (
     <>
       {token ? (
-        <Dashboard client={client} />
+        <div>
+        <Dashboard client={client}/>
+        <button onClick={logout}>Logout</button>
+      </div>
+
       ) : (
         <Login loggedIn={(token) => login(token)} client={client} />
       )}
