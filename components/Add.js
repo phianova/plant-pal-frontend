@@ -22,12 +22,12 @@ const Add = (props) => {
 
         // if there is a current ad, we know that the user is updating an ad because in order to have 
         // a current ad, the user has to have clicked on the update button for that ad
-            result = props.client.addPlant(e.target.name.value);
+        result = props.client.addPlant(e.target.name.value);
 
         result.then(() => {
             setDisabled(false);
             document.getElementById("addForm").reset();
-            props.refreshList()
+            props.refreshList();
         }).catch(() => {
             alert("there was an error")
             setDisabled(false);

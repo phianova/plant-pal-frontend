@@ -57,7 +57,9 @@ const Dashboard = (props) => {
             </div>
         ))}
         <Add
-        client={props.client} refreshList={refreshList()}></Add>
+        client={props.client} refreshList={() => refreshList()}>
+        </Add>
+
     </>
   )
 }
