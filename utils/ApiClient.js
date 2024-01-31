@@ -25,21 +25,21 @@ export default class ApiClient {
         });
       }
 
-      getPlants() {
-        return this.authenticatedCall("get", `${url}get`);
+      // somehow use login data.username
+      getPlants(token) {
+        return this.authenticatedCall("get", `${url}get/${token}`);
       }
     
-      addPlant(name) {
-        console.log(name);
-        return this.authenticatedCall("put", `${url}add`, {"name": name});
+      addPlant(name, token) {
+        return this.authenticatedCall("put", `${url}add/${token}`, {"name": name});
       }
     
-      deletePlant(id) {
-        return this.authenticatedCall("put", `${url}delete/${id}`);
+      deletePlant(id, token) {
+        return this.authenticatedCall("put", `${url}delete/${token}/${id}`);
       }
     
-      waterPlant(id) {
-        return this.authenticatedCall("put", `${url}water/${id}`);
+      waterPlant(id, token) {
+        return this.authenticatedCall("put", `${url}water/${token}/${id}`);
       }
     
       async login(username, password) {

@@ -31,15 +31,17 @@ export default function Home() {
 
   return (
     <>
+    <div className="min-h-screen text-center flex flex-col bg-gradient-to-br from-cyan-500 to-green-700">
       {token ? (
         <div>
-        <Dashboard client={client}/>
+        <Dashboard client={client} token={token}/>
         <button onClick={logout}>Logout</button>
       </div>
 
       ) : (
         <Login loggedIn={(token) => login(token)} client={client} />
       )}
+      </div>
     </>
   );
 }
