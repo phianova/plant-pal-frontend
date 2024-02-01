@@ -34,9 +34,8 @@ export default function Home() {
     <div className="min-h-screen text-center flex flex-col bg-gradient-to-br from-cyan-500 to-green-700">
       {token ? (
         <div>
-          <button onClick={logout} className="top-4 left-4 fixed text-2xl bg-slate-200 p-2 rounded-xl hover:bg-slate-300">Logout</button>
         <Dashboard client={client} token={token}/>
-        
+        <button onClick={logout}>Logout</button>
       </div>
 
       ) : (

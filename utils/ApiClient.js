@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:5050/";
+const url = "https://plant-pal-backend.onrender.com/";
 
 export default class ApiClient {
     constructor(tokenProvider, logoutHandler) {
@@ -43,10 +43,21 @@ export default class ApiClient {
       }
     
       async login(username, password) {
+        // return await axios({
+        //   method: "post",
+        //   url: `${url}auth`,
+        //   data: { username, password },
+        // });
+      try {
         return await axios({
           method: "post",
           url: `${url}auth`,
           data: { username, password },
         });
+      } catch(err) {
+        console.log(err)
+      }
+
+      
       }
 }
